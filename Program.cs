@@ -1,16 +1,24 @@
 ﻿// See https://aka.ms/new-console-template for more information
-// Add input data
-using LearnML;
+using CICDPoc;
 
-Console.WriteLine("Enter your review");
-var sampleData = new SentimentModel.ModelInput()
+Console.WriteLine("Hello, World!");
+//Load sample data
+var sampleData = new MLModel1.ModelInput()
 {
-    Col0 = Console.ReadLine()
+    Col0 = 77F,
+    Col1 = 31F,
+    Col2 = 20F,
+    Col3 = @"8",
+    Col4 = @"Blocker",
+    Col5 = 2F,
+    Col6 = 0F,
+    Col7 = 0F,
+    Col8 = 1F,
+    Col9 = @"Medium",
+    Col10 = 1F,
+    Col11 = 1F,
+    Col12 = 2F,
 };
 
-// Load model and predict output of sample data
-var result = SentimentModel.Predict(sampleData);
-
-// If Prediction is 1, sentiment is "Positive"; otherwise, sentiment is "Negative"
-string sentiment = result.Prediction == 1 ? $"{result.Score[1]:P} Positive" : $"{result.Score[0]:P} Negative";
-Console.WriteLine($"Text: {sampleData.Col0}\nSentiment: {sentiment}");
+//Load model and predict output
+var result = MLModel1.Predict(sampleData);
